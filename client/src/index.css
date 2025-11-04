@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+*{
+  font-family: "Outfit", sans-serif;
+
+}
+
+@layer base {
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  /* Hide UI buttons & sidebar during print */
+  button,
+  .bg-white.shadow-sm.border,
+  .max-w-7xl > .px-4:first-child {
+    display: none !important;
+  }
+
+  /* Make sure only resume preview prints nicely */
+  #resume-preview {
+    display: block;
+  }
+}
